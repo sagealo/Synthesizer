@@ -283,20 +283,23 @@ public class SynthesizerActivity extends AppCompatActivity implements OnClickLis
 
     private void playLeanOnMe() {
         int delayMs = Note.WHOLE_NOTE/20*25;
-        ArrayList<Integer> leanOnMe =new ArrayList<Integer>(Arrays.asList(noteC, noteC, noteD,
-                noteE, noteF, noteF, noteE, noteD, noteC, noteC, noteD, noteE, noteE, noteD, noteD,
-                noteC, noteC, noteD, noteE, noteF,noteF, noteE, noteD, noteC, noteC, noteD, noteE,
-                noteB,
-                noteC, noteC, noteHighE, noteHighD, noteHighC, noteHighE, noteHighD,noteHighD,noteHighD,
-                noteHighC, noteHighD, noteHighA, noteG, noteHighC, noteHighB,
-                noteHighA,noteG, noteHighC, noteHighD, noteHighE, noteHighE, noteHighD, noteHighC,
-                noteHighD, noteHighE, noteHighD, noteHighC, noteHighE,noteHighD,noteHighC,
-                noteHighC,noteHighE, noteHighD,noteHighD,noteHighD,noteHighC, noteHighD, noteHighA,
-                noteG, noteHighC, noteHighB, noteHighA, noteG, noteHighE, noteHighD, noteHighC,
+        ArrayList<Integer> leanOnMe =new ArrayList<Integer>(Arrays.asList(
+                noteC, noteC, noteD, noteE, noteF, noteF, noteE, noteD, noteC,
+                noteC, noteD, noteE, noteE, noteD, noteD, noteC, noteC, noteD, noteE, noteF,
+                noteF, noteE, noteD, noteC, noteC, noteD, noteE, noteB, noteC, noteC, noteHighE,
+                noteHighD,
+                noteHighC, noteHighE, noteHighD, noteHighD,noteHighD, noteHighC, noteHighD,
+                noteHighA, noteG, noteHighC, noteHighB, noteHighA,noteG,
+                noteHighC, noteHighD, noteHighE, noteHighE, noteHighD, noteHighC, noteHighD,
+                noteHighE, noteHighD,
+                noteHighC, noteHighE,noteHighD,noteHighC, noteHighC,noteHighE, noteHighD,noteHighD,
+                noteHighD,noteHighC, noteHighD, noteHighA, noteG,
+                noteHighC, noteHighB, noteHighA, noteG, noteHighE, noteHighD, noteHighC,
                 noteHighC, noteHighB, noteHighD, noteHighC, noteHighE, noteHighD, noteHighC,
-                noteHighE, noteHighE, noteHighD,noteHighC, noteHighD, noteHighA, noteHighC,
+                noteHighE, noteHighE, noteHighD,noteHighC, noteHighD, noteHighA,
+                noteHighC,
                 noteHighB, noteHighA, noteG, noteHighC, noteHighC, noteHighD, noteHighE, noteHighE,
-                noteHighE, noteHighD, noteHighD, noteHighE, noteHighD, noteHighC));
+                noteHighE));
         Song song3 = new Song();
         for(int i = 0; i<leanOnMe.size(); i++){
             if(i==0||i==15||i==32||i==55){
