@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -275,8 +276,10 @@ public class SynthesizerActivity extends AppCompatActivity implements OnClickLis
                 break;
             case R.id.button_synth_song2:
                 playRunaway();
+                break;
             case R.id.button_synth_song3:
                 playLeanOnMe();
+                break;
         }
 
     }
@@ -295,11 +298,8 @@ public class SynthesizerActivity extends AppCompatActivity implements OnClickLis
                 noteHighC, noteHighE,noteHighD,noteHighC, noteHighC,noteHighE, noteHighD,noteHighD,
                 noteHighD,noteHighC, noteHighD, noteHighA, noteG,
                 noteHighC, noteHighB, noteHighA, noteG, noteHighE, noteHighD, noteHighC,
-                noteHighC, noteHighB, noteHighD, noteHighC, noteHighE, noteHighD, noteHighC,
-                noteHighE, noteHighE, noteHighD,noteHighC, noteHighD, noteHighA,
-                noteHighC,
-                noteHighB, noteHighA, noteG, noteHighC, noteHighC, noteHighD, noteHighE, noteHighE,
-                noteHighE));
+                noteHighC));
+        //noteHighD, noteHighD, noteHighE, noteHighD, noteHighC
         Song song3 = new Song();
         for(int i = 0; i<leanOnMe.size(); i++){
             if(i==0||i==15||i==32||i==55){
@@ -322,8 +322,7 @@ public class SynthesizerActivity extends AppCompatActivity implements OnClickLis
 
     private void playRunaway() {
         ArrayList<Integer> runaway = new ArrayList<Integer>(Arrays.asList(noteHighC,noteHighC,
-                noteHighC,noteHighC,noteHighC,noteHighC,noteHighC,noteHighC,noteHighC,noteHighC,
-                noteHighC,noteHighC,noteHighC,noteHighC,noteC, noteHighB, noteHighB, noteHighB,
+                noteHighC,noteHighC,noteHighC,noteHighC,noteHighC,noteC, noteHighB, noteHighB, noteHighB,
                 noteB, noteHighA, noteHighA, noteHighA, noteA, noteF, noteF, noteE, noteHighC,
                 noteHighC, noteHighC, noteHighC, noteC, noteHighB, noteHighB,noteHighB,noteB,
                 noteHighA, noteHighA,noteHighA,noteA, noteF,noteF, noteF, noteE, noteHighC));
@@ -387,8 +386,18 @@ public class SynthesizerActivity extends AppCompatActivity implements OnClickLis
     }
 
     private void playSong(Song scale) {
+        int numPlayed = 0;
+        try{
+             numPlayed = Integer.parseInt(numTimes.getText().toString());
+        }
+        catch(NumberFormatException e){
+             //make a toast
+            Toast.makeText(
+                    getBaseContext(), "No Number Has Been Inputed",
+                    Toast.LENGTH_LONG).show();
+        }
 
-        for(int i =0; i<Integer.parseInt(numTimes.getText().toString()); i++) {
+        for(int i =0; i<numPlayed; i++) {
             for (Note note : scale.getNotes()) {
                 playNote(note);
                 delay(note.getDelay());
