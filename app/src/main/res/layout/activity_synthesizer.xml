@@ -41,11 +41,14 @@
         android:id="@+id/button_synth_scale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="124dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/play_scale"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_synth_d" />
 
     <Button
         android:id="@+id/button_synth_c"
@@ -141,8 +144,8 @@
         android:id="@+id/button_synth_song1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/twinkle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -283,35 +286,38 @@
         android:id="@+id/button_synth_song2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="72dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/runaway"
-        app:layout_constraintBottom_toTopOf="@+id/button_synth_song1"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_synth_song1"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toEndOf="@+id/button_synth_song3" />
 
     <EditText
         android:id="@+id/edittext_synth_numtimes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="@string/of_times_to_play_song"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_synth_song2"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_synth_song3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginStart="16dp"
         android:text="@string/lean_on_me"
-        app:layout_constraintBottom_toTopOf="@+id/button_synth_song2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
